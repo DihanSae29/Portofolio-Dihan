@@ -92,11 +92,9 @@
                         <span>Tailwind CSS</span>
                         <span>MySQL</span>
                     </div>
-                    <a href="https://github.com/DihanSae29/ZeeTOUR.gg/blob/main/README.md" target="_blank" class="project-link">VIEW REPOSITORY //</a>
+                    <a href="https://github.com/DihanSae29/ZeeTOUR.gg/blob/main/README.md" target="_blank" class="project-link">VIEW REPOSITORY</a>
                 </div>
             </div>
-
-
 
             <div class="project-card">
                 <div class="project-img">
@@ -110,7 +108,7 @@
                         <span>CSS3</span>
                         <span>JavaScript</span>
                     </div>
-                    <a href="https://dihansae29.github.io/dino-jump/dino_goreng.html" class="project-link">PLAY GAME //</a>
+                    <a href="https://dihansae29.github.io/dino-jump/dino_goreng.html" class="project-link">PLAY GAME</a>
                 </div>
             </div>
 
@@ -127,12 +125,52 @@
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dihanahmad06lpg@gmail.com" target="_blank">EMAIL</a>
             </div>
             <a href="CV.pdf" download class="btn-cyber">Download Resume</a>
+
+            <div class="contact-form" style="margin-top: 50px; text-align: left; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
+                <h2 style="margin-bottom: 20px; color: white;">Hubungi Saya</h2>
+                
+                <label for="pesan-teks" style="display: block; margin-bottom: 10px; color: #ddd;">Tinggalkan Pesan:</label>
+                <textarea id="pesan-teks" placeholder="Ketik pesan di sini..." rows="5" style="width: 100%; padding: 15px; border-radius: 5px; border: 1px solid #ccc; background: white; color: #333; font-family: inherit; margin-bottom: 15px; resize: vertical;"></textarea>
+                
+                <div style="display: flex; flex-direction: column; gap: 30px;">
+                    <button id="btn-kirim" style="background-color: #28a745; color: white; border: none; padding: 12px 25px; cursor: pointer; border-radius: 5px; font-weight: bold; width: fit-content; font-size: 16px;">Kirim Pesan</button>
+                    
+                    <button id="btn-saran" style="background-color: #333; color: white; border: none; padding: 15px 30px; cursor: pointer; border-radius: 5px; font-weight: bold; width: fit-content; margin: 0 auto; font-size: 16px;">Beri Kritik & Saran di sini</button>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 Dihan Ahmad Al-Hasyir Sae. Built from scratch.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const inputPesan = document.getElementById("pesan-teks");
+            const btnKirim = document.getElementById("btn-kirim");
+            const btnSaran = document.getElementById("btn-saran");
+            const nomorWhatsApp = "08117280306"; 
+
+            btnKirim.addEventListener("click", function() {
+                const isiPesan = inputPesan.value.trim();
+
+                if (isiPesan === "") {
+                    alert("Waduh, pesannya jangan dikosongin dong!");
+                    return;
+                }
+
+                const teksEncoded = encodeURIComponent(isiPesan);
+                window.open(`https://wa.me/${nomorWhatsApp}?text=${teksEncoded}`, "_blank");
+                
+                inputPesan.value = "";
+            });
+
+            btnSaran.addEventListener("click", function() {
+                alert("Terima kasih atas kepeduliannya! Fitur database Kritik & Saran saat ini sedang dibangun oleh Dihan.");
+            });
+        });
+    </script>
 
 </body>
 </html>
